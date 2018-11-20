@@ -5,21 +5,42 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class BinaryConverter implements ActionListener {
+	
+	JButton button = new JButton("convert");
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JTextField answer = new JTextField(70);
+	JLabel label= new JLabel();
 
 	public static void main(String[] args) {
-		JButton button = new JButton("button1");
-		button.addActionListener(new BinaryConverter());
-		JFrame frame = new JFrame();
-		JPanel panel = new JPanel();
-		JTextField answer = new JTextField(20);
-
+		BinaryConverter bc= new BinaryConverter();
+		bc.showButton();
 	}
-
+	void showButton() {
+		
+		
+		panel.add(button);
+		panel.add(button);
+		
+		answer.add(label);
+		button.addActionListener(this);
+		panel.add(label);
+		frame.add(label);
+		panel.add(answer);
+		frame.add(panel);
+		frame.pack();
+		frame.setVisible(true);
+		
+		
+		
+	}
+	
 	String convert(String input) {
 		if (input.length() != 8) {
 			JOptionPane.showMessageDialog(null, "Enter 8 bits, silly!!!");
@@ -43,6 +64,6 @@ public class BinaryConverter implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
-	}
+		convert(answer.getText());
+}
 }
