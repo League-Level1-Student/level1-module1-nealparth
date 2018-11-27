@@ -25,17 +25,16 @@ public class BinaryConverter implements ActionListener {
 	void showButton() {
 		
 		
-		panel.add(button);
+
 		panel.add(button);
 		
-		answer.add(label);
 		button.addActionListener(this);
 		panel.add(label);
-		frame.add(label);
 		panel.add(answer);
 		frame.add(panel);
 		frame.pack();
 		frame.setVisible(true);
+		
 		
 		
 		
@@ -64,6 +63,9 @@ public class BinaryConverter implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		convert(answer.getText());
+String convert = convert(answer.getText());
+label.setText(convert);
+frame.pack();
+		
 }
 }
